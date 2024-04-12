@@ -20,13 +20,11 @@ jobs:
       run: npm install
     - name: Install playwright
       run: npx playwright install
-    - name: Start Backend
-      run: npm run start-be &
-    - name: Wait for the process to start
-      run: sleep 5
-    - name: Start Frontend
-      run: npm run start-fe &
-    - name: Wait for the process to start
-      run: sleep 5
-    - name: Run tests
-      run: npm run test
+    - name: Build app
+      run: npm start
+    - name: Run ui tests
+      run: npm run test:ui
+    - name: Run unit tests
+      run: npm run test:unit
+    - name: Display SoftUni username
+      run: echo "klameta"
